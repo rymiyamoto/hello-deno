@@ -1,0 +1,16 @@
+deno infoimport { assertEquals } from "https://deno.land/std@0.94.0/testing/asserts.ts";
+
+// シンプルな名前と関数コンパクトですが、設定可能ではないです。
+Deno.test("hello world #1", () => {
+  const x = 1 + 2;
+  assertEquals(x, 3);
+});
+
+// 完全で本格的なテスト定義で長いですが、設定可能です(下記参照)
+Deno.test({
+  name: "hello world #2",
+  fn: () => {
+    const x = 1 + 2;
+    assertEquals(x, 3);
+  },
+});
